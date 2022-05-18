@@ -1,0 +1,239 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+ul.slider {
+  list-style: none;
+  position: relative;
+  /* display: flex; */
+  /* flex-direction: row; */
+}
+
+ul li {
+  /* display: none; */
+  opacity: 0;
+  position: absolute;
+  transition: all ease 1000ms;
+}
+
+ul li.active {
+  display: block;
+}
+
+.slide {
+  background-color: white;
+  position: absolute;
+  opacity: 1;
+}
+
+.slide-container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.slide-img-container {
+  background: url("images/pattern-bg.svg") no-repeat center;
+  background-size: contain;
+  margin: 30px auto;
+  padding: 7% 5% 5%;
+  height: 100%;
+  text-align: center;
+}
+
+.img-shadow {
+    width: 65%;
+    max-width: 450px;
+    position: relative;
+    margin: 0 auto;
+    border-radius: 16%;
+    box-shadow: 0px 27px 23px #24242c30;
+    display: flex;
+    justify-content: center;
+  }
+
+.slide-img-container img {
+  width: 100%;
+  border-radius: 2%;
+  display: block;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.slide-control {
+  background-color: #f8f8ff;
+  border-radius: 50px;
+  display: flex;
+  position: absolute;
+  bottom: -25px;
+  width: fit-content;
+  height: 50px;
+  justify-content: space-between;
+  transition: opacity ease 300ms;
+}
+
+.slide-control span.prev {
+  display: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.slide-control span.next {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.slide-control span.round {
+  border-radius: 50px;
+}
+.slide-control span {
+  border-radius: 50px;
+  text-align: center;
+  padding: 17px;
+  cursor: pointer;
+  transition: background-color ease 100ms;
+}
+
+.slide-control span:hover {
+  background-color: #eeeef5;
+}
+
+.slide-control span img {
+  height: 100%;
+}
+
+.slide-text {
+  font-size: 22px;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+}
+.slide-text-container {
+  width: 85%;
+  text-align: center;
+}
+.slide-text-container img {
+  width: 70px;
+}
+.slide-text-container .quote {
+  margin-top: -35px;
+}
+
+.slide-text .citation {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  margin: 32px 0;
+}
+.slide-text .citation {
+  font-weight: 500;
+}
+.slide-text .citation .title {
+  color: hsl(240, 18%, 77%);
+}
+.slide .pattern-curve {
+  width: 75%;
+}
+
+/* SLIDE ANIMATION */
+.fade {
+    opacity: 0;
+  }
+  .slide-left {
+    transform: scale(0.5) translate(-100%, 0);
+  }
+  .slide-right {
+    transform: scale(0.5) translate(100%, 0);
+  }
+
+  @media only screen and (min-width: 800px) {
+    body {
+      background-color: hsl(240, 18%, 77%);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .slide {
+      width: 90%;
+      max-width: 950px;
+      height: 500px;
+      margin: 150px auto;
+      /* position: relative; */
+    }
+    .slide-text {
+      width: 45%;
+      max-width: 450px;
+      text-align: left;
+      position: absolute;
+      left: 10%;
+    }
+    .slide-text .citation {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      margin: 32px 0;
+    }
+    .slide-container {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      height: 100%;
+    }
+    .slide-img-container {
+      height: 500px;
+      display: flex;
+      align-items: center;
+    }
+    .slide-text-container {
+      width: 450px;
+      text-align: left;
+    }
+    .slide-text-container img {
+      position: relative;
+      left: 16%;
+      top: -14px;
+    }
+    .slide .pattern-curve {
+      width: 45%;
+      margin: 0;
+      display: block;
+      position: absolute;
+      bottom: 0;
+    }
+    .img-shadow {
+      width: 85%;
+      justify-content: flex-start;
+    }
+    .slide-control {
+      height: 40px;
+      left: 38px;
+    }
+    .slide-control span {
+      padding: 14px
+    }
+  
+  
+  
+  ul li {
+    /* display: none; */
+    /* opacity: 0; */
+    position: absolute;
+    top: calc(50vh - 250px);  /* position the element in the middle of the view height */
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+    transform: translate(-50%, -50%); /* This is a shorthand of translateX(-50%) and translateY(-50%) */
+    transition: all ease 1000ms;
+  }
+  .slide-left {
+    transform: scale(0.5) translate(-300%, -100%);
+  }
+  .slide-right {
+    transform: scale(0.5) translate(100%, -100%);
+  }
+
+}
